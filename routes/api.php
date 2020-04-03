@@ -19,3 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('register', 'UserController@register');
 Route::post('login', 'UserController@login');
 Route::get('user', 'UserController@getAuthenticatedUser')->middleware('jwt.verify');
+
+    Route::get('/daily_scrum', 'Daily_ScrumController@index');
+    Route::get('/daily_scrum/{id}', 'Daily_ScrumController@show');
+    Route::post('/daily_scrum', 'Daily_ScrumController@store');
+    Route::put('/daily_scrum/{id}', 'Daily_ScrumControllerr@update');
+    Route::delete('/daily_scrum/{id}', 'Daily_ScrumController@destroy');
